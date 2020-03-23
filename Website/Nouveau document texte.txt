@@ -1,0 +1,30 @@
+#2d708a
+rgb(45, 112, 138)
+bleu
+#c42541
+rgb(196, 37, 65)
+rouge
+#175c74
+rgb(23, 92, 116)
+bleu
+#1c5c7c
+rgb(28, 92, 124)
+bleu
+#d43b5c
+rgb(212, 59, 92)
+rouge
+#aa172c
+rgb(170, 23, 44)
+rouge
+#145474
+rgb(20, 84, 116)
+bleu
+#9c1827
+rgb(156, 24, 39)
+rouge
+#d23c54
+rgb(210, 60, 84)
+rouge
+#b41c2c
+rgb(180, 28, 44)
+rouge
