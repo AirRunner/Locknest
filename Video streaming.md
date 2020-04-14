@@ -1,8 +1,13 @@
 #Video streaming
 
-##RTSP
+##Libstreaming
 - [Libstreaming](https://github.com/fyhertz/libstreaming)
 - [Libstreaming javadoc](http://guigui.uk/libstreaming/doc/)
+- [Libstreaming with Wowza server](https://github.com/fyhertz/libstreaming/wiki/Using-libstreaming-with-Wowza-Media-Server)
+
+##libVLC
+- [libVLC](https://wiki.videolan.org/LibVLC/)
+- [Sample Android app](https://bitbucket.org/edwardcw/libvlc-android-sample/src/master/)
 
 ##WebRTC
 - [WebRTC samples](https://webrtc.github.io/samples/)
@@ -24,3 +29,4 @@
 
 ##Wowza
 - [Wowza](https://www.wowza.com)
+- [Wowza GoCoder SDK (iOS & Android)](https://www.wowza.com/docs/how-to-install-gocoder-sdk-for-android#sampleapps)
