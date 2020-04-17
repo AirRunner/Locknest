@@ -48,9 +48,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener, 
                 .setSurfaceView(mSurfaceView)
                 .setPreviewOrientation(90)
                 .setContext(getApplicationContext())
-                .setAudioEncoder(SessionBuilder.AUDIO_NONE)
+                .setAudioEncoder(SessionBuilder.AUDIO_AAC)
                 .setAudioQuality(new AudioQuality(16000, 32000))
-                .setVideoEncoder(SessionBuilder.VIDEO_NONE)
+                .setVideoEncoder(SessionBuilder.VIDEO_H264)
                 .setVideoQuality(new VideoQuality(320,240,20,500000))
                 .build();
 
