@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="ic_launcher_background">#C65A69</color>
+    <color name="ic_locknest_icon_background">#C65A69</color>
+    <color name="colorPrimary">#C65A69</color>
+    <color name="colorPrimaryDark">#494949</color>
+    <color name="colorAccent">#74A3B5</color>
+
+    <color name="blue_light">#74A3B5</color>
+    <color name="blue_medium">#6796A8</color>
+    <color name="blue_dark">#58889C</color>
+    <color name="red_light">#DE6C83</color>
+    <color name="red_medium">#D26175</color>
+    <color name="red_dark">#C65A69</color>
+    <color name="grey_light">#E7E7E7</color>
+    <color name="grey_medium">#A9A9A9</color>
+    <color name="grey_dark">#797979</color>
+    <color name="grey_darkest">#494949</color>
 </resources>

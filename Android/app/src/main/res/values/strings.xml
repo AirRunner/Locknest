@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Locknest</string>
+    <string name="access_token" translatable="false">pk.eyJ1IjoidGltb3RoZWNoYXV2ZXQiLCJhIjoiY2s3MGpjN3UzMDk4bzNrbXpwMm9xaWRwcCJ9.Lc7Wqfl231IMrIzKqZ1EAQ</string>
 </resources>
