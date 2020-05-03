@@ -22,6 +22,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.securious.locknest.R;
 import com.securious.locknest.ui.login.LoginViewModel;
 import com.securious.locknest.ui.login.LoginViewModelFactory;
@@ -29,11 +31,19 @@ import com.securious.locknest.ui.login.LoginViewModelFactory;
 public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
+    public FirebaseAuth mAuth;
+    private TextView NewText;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+
         loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
@@ -127,5 +137,14 @@ public class LoginActivity extends AppCompatActivity {
 
     private void showLoginFailed(@StringRes Integer errorString) {
         Toast.makeText(getApplicationContext(), errorString, Toast.LENGTH_SHORT).show();
+    }
+
+    private void updateUI(FirebaseUser user) {
+        NewText = (TextView)findViewById(R.id.textView);
+        if (user != null) {
+            NewText.setText(user.getUid() + " - " + user.getEmail());
+        } else {
+            NewText.setText("No account");
+        }
     }
 }
