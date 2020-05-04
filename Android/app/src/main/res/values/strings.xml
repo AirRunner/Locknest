@@ -11,4 +11,9 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="account">Account</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="locknest_logo">Locknest logo</string>
+    <string name="email">Email</string>
+    <string name="go">GO !</string>
+    <string name="create_a_new_account">Create a new account</string>
 </resources>

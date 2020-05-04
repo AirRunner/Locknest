@@ -6,6 +6,7 @@
     <color name="colorPrimaryDark">#494949</color>
     <color name="colorAccent">#74A3B5</color>
 
+    <color name="light_color">#ecf0f3</color>
     <color name="blue_light">#74A3B5</color>
     <color name="blue_medium">#6796A8</color>
     <color name="blue_dark">#58889C</color>

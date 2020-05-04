@@ -1,11 +1,29 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/DosisTextViewStyle</item>
+        <item name="android:buttonStyle">@style/roundedbutton</item>
+    </style>
+
+    <style name="roundedbutton" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/dosis_semibold</item>
+        <item name="android:background">@drawable/roundedbutton</item>
+        <item name="android:textColorHint">@color/light_color</item>
+        <item name="android:textColor">@color/light_color</item>
+        <item name="android:textSize">18dp</item>
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="DosisTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">dosis_semibold</item>
     </style>
 
 </resources>
