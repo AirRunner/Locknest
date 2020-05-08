@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Locknest</string>
     <string name="access_token" translatable="false">pk.eyJ1IjoidGltb3RoZWNoYXV2ZXQiLCJhIjoiY2s3MGpjN3UzMDk4bzNrbXpwMm9xaWRwcCJ9.Lc7Wqfl231IMrIzKqZ1EAQ</string>
-    <string name="title_activity_login">Sign in</string>
+    <string name="title_activity_login">Log in</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -16,4 +16,12 @@
     <string name="email">Email</string>
     <string name="go">GO !</string>
     <string name="create_a_new_account">Create a new account</string>
+    <string name="already_have_an_account">Already have an account ?</string>
+    <string name="minimum_password">Password too short, enter minimum 6 characters!</string>
+    <string name="auth_failed">Authentication failed, please check the input</string>
+    <string name="signup">Sign up</string>
+    <string name="password_restoration">Password restoration</string>
+    <string name="desc_pwdlost">Your password ran away from your mind ? No worries, just enter the email address you registered with and we\'ll help you</string>
+    <string name="back"><![CDATA[<< Back]]></string>
+    <string name="reset_password">Reset password</string>
 </resources>

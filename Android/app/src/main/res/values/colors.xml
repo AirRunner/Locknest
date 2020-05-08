@@ -17,4 +17,8 @@
     <color name="grey_medium">#A9A9A9</color>
     <color name="grey_dark">#797979</color>
     <color name="grey_darkest">#494949</color>
+
+    <color name="bg_signin">#ecf0f3</color>
+    <color name="bg_signup">#ecf0f3</color>
+    <color name="bg_pwdlost">#FBE9E7</color>
 </resources>
