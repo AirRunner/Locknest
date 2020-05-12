@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html>
+<?php
+if(!isset($_SESSION))
+{
+session_start();
+}
+include('firebase.php');
+?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -25,8 +32,11 @@
                             <h1 class="tm-site-name">Locknest</h1>
                         </div>
                             <ul class="tm-main-nav-ul">
-                                    <a class="connect" href="index.php"><b>Deconnecter</b></a>
+                                    <a class="connect" href="logout.php"><b>Deconnecter</b></a>
                                 <br><br>
+                                <li class="tm-nav-item">
+                                    <a href="login.php" class="tm-nav-item-link">page principale</a>
+                                </li>
                                 <li class="tm-nav-item">
                                     <a href="#secondgallery" class="tm-nav-item-link">Téléchargement</a>
                                 </li>
@@ -40,46 +50,35 @@
                     </div> <!-- Left column: logo and menu
                 
                 -->
-
-                
-                    
                     <!-- Right column: content -->
                     <div class="tm-right-column">
                         <figure>
                             <img src="img/header.png" alt="Header image" class="img-fluid">    
                         </figure>
-
-
-                    </div>
-                    <div>
                         <table>
                             <tr >
-                                <td class="test">ID</td>
+                                <td class="test">Vidéos</td>
                                 <td class="test">Date</td>
-                                <td class="test">vidéo</td>
-                            </tr>;
+                            </tr>
                                 <?php
-                                    $conn = mysqli_connect("localhost", "root", "", "locknest");/// Connection to the Pokedex Database
-                                    if ($conn->connect_error) {die("Connection failed: " . $conn->connect_error);}///Print Error if not able to connect
-                                    $sql = "SELECT * FROM compte";
-                                    $result = $conn->query($sql);
+                                    include('db.php');
+                                    $ID =  $_SESSION['ID'];
+                                    $sql = "SELECT * FROM videos where id=$ID";
+                                    $result = $con->query($sql);
                                     if ($result->num_rows > 0) {/// output data of each row
                                         
                                         while($row = $result->fetch_assoc()) {
-                                            echo "<tr><td>".$row["ID"]."</td><td>".$row["Date"]."</td><td>".$row["vidéo"]."</td></tr>";
+                                            echo "<tr><td><a href='watch.php?id_video=$row[id_video]'>".$row['name']."</a></td><td>$row[Date]</td></tr>";
                                         }
                                         echo "</table>";
                                     } 
                                     else {echo "0 results";} ///Print 0 results if Nothing
-                                    $conn->close();
+                                    $con->close();
                                 ?>
                         </table>  
+
+
                     </div>
-                    
-
-
-
-
 
                     <div class="tm-content-div">
                         <!-- Welcome section -->
@@ -138,6 +137,14 @@
 </body>
 </html>
 <style>
+table{
+    margin-left:25%;
+    font-family: monospace;
+    border:1px solid #0b0b0b;
+    margin:10px;
+    padding:3px;
+}
 td{
+    border:1px solid #0b0b0b;
 }
 </style>
