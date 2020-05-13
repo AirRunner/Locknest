@@ -135,7 +135,7 @@ public class Stream extends AppCompatActivity implements OnClickListener, Sessio
         mButton1.setText("Start");
     }
 
-    /** Displays a popup to report the eror to the user */
+    /** Displays a popup to report the error to the user */
     private void logError(final String msg) {
         final String error = (msg == null) ? "Error unknown" : msg;
         AlertDialog.Builder builder = new AlertDialog.Builder(Stream.this);
