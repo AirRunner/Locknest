@@ -3,6 +3,7 @@ package com.securious.locknest;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
@@ -29,7 +30,7 @@ import net.majorkernelpanic.streaming.video.VideoQuality;
 
 public class Stream extends AppCompatActivity implements OnClickListener, Session.Callback, SurfaceHolder.Callback {
 
-    private final static String TAG = "Stream";
+    private final static String TAG = "BOBO";
 
     private Button mButton1, mButton2;
     private SurfaceView mSurfaceView;
@@ -45,9 +46,8 @@ public class Stream extends AppCompatActivity implements OnClickListener, Sessio
         if (ContextCompat.checkSelfPermission(Stream.this,
                 Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(Stream.this,
+            if (!ActivityCompat.shouldShowRequestPermissionRationale(Stream.this,
                     Manifest.permission.CAMERA)) {
-            } else {
                 ActivityCompat.requestPermissions(Stream.this,
                         new String[]{Manifest.permission.CAMERA},
                         PackageManager.PERMISSION_GRANTED);
@@ -58,9 +58,8 @@ public class Stream extends AppCompatActivity implements OnClickListener, Sessio
         if (ContextCompat.checkSelfPermission(Stream.this,
                 Manifest.permission.RECORD_AUDIO)
                 != PackageManager.PERMISSION_GRANTED) {
-            if (ActivityCompat.shouldShowRequestPermissionRationale(Stream.this,
+            if (!ActivityCompat.shouldShowRequestPermissionRationale(Stream.this,
                     Manifest.permission.RECORD_AUDIO)) {
-            } else {
                 ActivityCompat.requestPermissions(Stream.this,
                         new String[]{Manifest.permission.RECORD_AUDIO},
                         PackageManager.PERMISSION_GRANTED);
@@ -193,6 +192,13 @@ public class Stream extends AppCompatActivity implements OnClickListener, Sessio
     @Override
     public void surfaceDestroyed(SurfaceHolder holder) {
         mSession.stop();
+    }
+
+    public void goToLocation(View v)
+    {
+        Intent intent = new Intent(Stream.this, LocationTracker.class);
+        startActivity(intent);
+        finish();
     }
 
 }
