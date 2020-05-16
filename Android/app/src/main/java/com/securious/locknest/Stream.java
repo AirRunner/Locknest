@@ -1,6 +1,9 @@
 package com.securious.locknest;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import android.view.View.OnClickListener;
@@ -12,6 +15,9 @@ import android.view.WindowManager;
 import android.view.View;
 import android.util.Log;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import android.content.DialogInterface;
 
 
@@ -34,6 +40,33 @@ public class Stream extends AppCompatActivity implements OnClickListener, Sessio
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stream);
+
+        // Ask for camera permissions
+        if (ContextCompat.checkSelfPermission(Stream.this,
+                Manifest.permission.CAMERA)
+                != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(Stream.this,
+                    Manifest.permission.CAMERA)) {
+            } else {
+                ActivityCompat.requestPermissions(Stream.this,
+                        new String[]{Manifest.permission.CAMERA},
+                        PackageManager.PERMISSION_GRANTED);
+            }
+        }
+
+        // Ask for mic permissions
+        if (ContextCompat.checkSelfPermission(Stream.this,
+                Manifest.permission.RECORD_AUDIO)
+                != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(Stream.this,
+                    Manifest.permission.RECORD_AUDIO)) {
+            } else {
+                ActivityCompat.requestPermissions(Stream.this,
+                        new String[]{Manifest.permission.RECORD_AUDIO},
+                        PackageManager.PERMISSION_GRANTED);
+            }
+        }
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
