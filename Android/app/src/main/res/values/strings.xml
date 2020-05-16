@@ -35,4 +35,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="skip">Skip</string>
     <string name="welcome_title">Welcome to Locknest !</string>
+
+    <string name="firebase_path">location</string>
 </resources>

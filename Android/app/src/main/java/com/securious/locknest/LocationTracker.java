@@ -22,6 +22,9 @@ import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 import com.mapbox.mapboxsdk.maps.Style;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.lang.ref.WeakReference;
 import java.util.List;
 
@@ -63,7 +66,7 @@ public class LocationTracker extends AppCompatActivity implements
     public void onMapReady(@NonNull final MapboxMap mapboxMap) {
         this.mapboxMap = mapboxMap;
 
-        mapboxMap.setStyle(Style.TRAFFIC_NIGHT,
+        mapboxMap.setStyle(Style.TRAFFIC_DAY,
                 new Style.OnStyleLoaded() {
                     @Override public void onStyleLoaded(@NonNull Style style) {
                         enableLocationComponent(style);
@@ -179,6 +182,10 @@ public class LocationTracker extends AppCompatActivity implements
                 if (LocationTracker.this.mapboxMap != null && result.getLastLocation() != null) {
                     LocationTracker.this.mapboxMap.getLocationComponent().forceLocationUpdate(result.getLastLocation());
                 }
+
+                /*Part where I try to send the coordinates to firebase*/
+                DatabaseReference ref = FirebaseDatabase.getInstance().getReference(String.valueOf(R.string.firebase_path));
+                ref.setValue(location);
             }
         }
 
